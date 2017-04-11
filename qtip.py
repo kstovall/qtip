@@ -12,8 +12,8 @@ from __future__ import division
 import os, sys
 
 # Importing all the stuff for the IPython console widget
-from IPython.qt.console.rich_ipython_widget import RichIPythonWidget
-from IPython.qt.inprocess import QtInProcessKernelManager
+from qtconsole.rich_ipython_widget import RichJupyterWidget
+from qtconsole.inprocess import QtInProcessKernelManager
 from IPython.lib import guisupport
 
 from PyQt4 import QtGui, QtCore
@@ -238,7 +238,7 @@ class QtipWindow(QtGui.QMainWindow):
         """
         Create the IPython widget
         """
-        self.consoleWidget = RichIPythonWidget()
+        self.consoleWidget = RichJupyterWidget()
         #self.consoleWidget.setMinimumSize(600, 550)
         self.consoleWidget.banner = QtipBanner
         self.consoleWidget.kernel_manager = self.kernelManager
